@@ -1,11 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="container">
+    <div class="book-icon">📚</div>
+    <h1>Dragon's Library</h1>
+    <p>This library is still being written...</p>
+    <p>Please check back soon as we fill the shelves with ancient tomes and arcane wisdom.</p>
+  </div>
+ 
 </Layout>
+
+<style>
+  :root {
+      --base: #24273a;
+      --mantle: #1e2030;
+      --crust: #181926;
+      --text: #cad3f5;
+      --subtext1: #b8c0e0;
+      --overlay1: #8087a2;
+      --surface0: #363a4f;
+      --surface1: #494d64;
+      --surface2: #5b6078;
+      --lavender: #b7bdf8;
+      --mauve: #c6a0f6;
+      --rosewater: #f4dbd6;
+    }
+
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 3rem;
+      text-align: center;
+      background-color: var(--surface1);
+      padding: 2rem 3rem;
+      border: 2px solid var(--mauve);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--lavender);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--subtext1);
+    }
+
+    .book-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--rosewater);
+    }
+</style>
