@@ -22,5 +22,5 @@ FROM caddy:alpine
 COPY --from=builder /app/dist /usr/share/caddy
 
 # Optional: Custom Caddyfile
-# COPY Caddyfile /etc/caddy/Caddyfile
+COPY Caddyfile /etc/caddy/Caddyfile
 
