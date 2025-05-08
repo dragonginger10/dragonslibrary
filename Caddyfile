@@ -1,9 +1,10 @@
 www.dragonslibrary.xyz {
-    redir https://{host}{uri}
+    auto_https off
+    redir http://{host}{uri}
 }
 
 dragonslibrary.xyz {
-    auto_https disable_redirects
+    auto_https off
     root * /usr/share/caddy
     file_server
 
