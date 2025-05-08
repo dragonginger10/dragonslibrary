@@ -6,7 +6,10 @@ dragonslibrary.xyz {
     root * /var/www/html
     file_server
 
-    errors /404.html
+    handle_errors {
+        rewrite 404 /404.html
+        file_server
+    }
 }
 
 
