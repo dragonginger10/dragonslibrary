@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found">
+  <div class="scroll-container">
+    <h1 class="glyph">404: Page Not Found</h1>
+    <p class="incantation">
+      “Ah... traveler, you’ve turned the wrong page of the tome.<br>
+      This path is cloaked in shadows and speaks no name.”<br><br>
+      Perhaps retracing your steps may unveil a truer chapter.
+    </p>
+    <a href="/" class="return-link">↩ Return to the Library</a>
+  </div>
+
+  <style>
+
+    @media (min-width: 768px) {
+      body::before {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        background: url('/sigil.svg') no-repeat center center;
+        background-size: contain;
+        z-index: 0;
+        pointer-events: none;
+        animation: pulse-glow-rotate 30s ease-in-out infinite;
+      }
+
+      @keyframes pulse-glow-rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+          filter: drop-shadow(0 0 6px rgba(166, 227, 161, 0.25));  /* soft green glow */
+          opacity: 0.8;
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(180deg);
+          filter: drop-shadow(0 0 18px rgba(166, 227, 161, 0.55)); /* stronger green glow */
+          opacity: .8;
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+          filter: drop-shadow(0 0 6px rgba(166, 227, 161, 0.25));
+          opacity: 0.8;
+        }
+      }
+    }
+
+
+    .scroll-container {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 5rem auto;
+      padding: 2.5rem;
+      background-color: var(--surface1);
+      border: 2px dashed var(--mauve);
+      border-radius: 12px;
+      text-align: center;
+      opacity: 0.6;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      font-family: var(--font-serif);
+    }
+
+    .glyph {
+      font-size: 2.2rem;
+      color: var(--lavender);
+      margin-bottom: 1.2rem;
+    }
+
+    .incantation {
+      font-size: 1.2rem;
+      color: var(--subtext1);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--rosewater);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rosewater);
+      transition: color 0.3s ease;
+    }
+
+    .return-link:hover {
+      color: var(--lavender);
+      border-color: var(--lavender);
+    }
+
+  </style>
+</BaseLayout>
+
