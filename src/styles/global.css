@@ -1,0 +1,58 @@
+:root {
+  --base: #24273a;
+  --mantle: #1e2030;
+  --crust: #181926;
+  --text: #cad3f5;
+  --subtext1: #b8c0e0;
+  --overlay1: #8087a2;
+  --surface0: #363a4f;
+  --surface1: #494d64;
+  --surface2: #5b6078;
+  --lavender: #b7bdf8;
+  --mauve: #c6a0f6;
+  --rosewater: #f4dbd6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: var(--base);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--mantle);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--lavender);
+  border-bottom: 1px solid var(--surface2);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--surface0);
+}
+
+footer {
+  background-color: var(--mantle);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--subtext1);
+}
+
