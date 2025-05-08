@@ -3,6 +3,7 @@ www.dragonslibrary.xyz {
 }
 
 dragonslibrary.xyz {
+    auto_https disable_redirects
     root * /usr/share/caddy
     file_server
 
