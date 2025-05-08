@@ -3,7 +3,7 @@ www.dragonslibrary.xyz {
 }
 
 dragonslibrary.xyz {
-    root * /var/www/html
+    root * /usr/share/caddy
     file_server
 
     handle_errors {
