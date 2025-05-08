@@ -1,14 +1,12 @@
-yourdomain.com {
+www.dragonslibrary.xyz {
+    redir https://{host}{uri}
+}
+
+dragonslibrary.xyz {
     root * /var/www/html
     file_server
 
-    # Custom error page for 404 errors
-    handle_errors {
-        @notFound {
-            status 404
-        }
-        rewrite @notFound /404
-        file_server
-    }
+    errors /404.html
 }
+
 
