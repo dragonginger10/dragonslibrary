@@ -1,17 +1,18 @@
-www.dragonslibrary.xyz {
+{
     auto_https off
-    redir http://{host}{uri}
 }
 
-dragonslibrary.xyz {
-    auto_https off
+http://www.dragonslibrary.xyz {
+        redir http://dragonslibrary.xyz{uri}
+}
+
+http://dragonslibrary.xyz {
     root * /usr/share/caddy
-    file_server
 
     handle_errors {
-        rewrite 404 /404.html
+        rewrite * /404.html
         file_server
     }
+
+    file_server
 }
-
-
