@@ -1,0 +1,10 @@
+name: "dragonslibrary"
+services:
+  dragons-library:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dragons-library
+    ports:
+      - "9999:80"  # Serve site on http://localhost:8080
+    restart: unless-stopped
