@@ -2,7 +2,7 @@
 
 {
   # https://devenv.sh/packages/
-  packages = [ pkgs.pnpm ];
+  # packages = [ pkgs.pnpm ];
 
   # https://devenv.sh/languages/
   languages.javascript = {
