@@ -30,23 +30,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         animation: pulse-glow-rotate 30s ease-in-out infinite;
       }
 
-      @keyframes pulse-glow-rotate {
-        0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-          filter: drop-shadow(0 0 6px rgba(166, 227, 161, 0.25));  /* soft green glow */
-          opacity: 0.8;
-        }
-        50% {
-          transform: translate(-50%, -50%) rotate(180deg);
-          filter: drop-shadow(0 0 18px rgba(166, 227, 161, 0.55)); /* stronger green glow */
-          opacity: .8;
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-          filter: drop-shadow(0 0 6px rgba(166, 227, 161, 0.25));
-          opacity: 0.8;
-        }
-      }
+        @keyframes pulse-glow-rotate {
+          0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+            filter: drop-shadow(0 0 10px rgba(203, 166, 247, 0.4))
+                    drop-shadow(0 0 20px rgba(203, 166, 247, 0.3));
+            opacity: 0.8;
+          }
+          50% {
+            transform: translate(-50%, -50%) rotate(180deg);
+            filter: drop-shadow(0 0 20px rgba(203, 166, 247, 0.65))
+                    drop-shadow(0 0 40px rgba(203, 166, 247, 0.4));
+            opacity: 0.8;
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+            filter: drop-shadow(0 0 10px rgba(203, 166, 247, 0.4))
+                    drop-shadow(0 0 20px rgba(203, 166, 247, 0.3));
+            opacity: 0.8;
+                }
+          }
+
     }
 
 
