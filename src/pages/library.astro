@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const allBooks = Object.values(import.meta.glob('./books/*.md', { eager: true }));
+---
+
+<BaseLayout title="Library">
+    <div class="library-container">
+      <h1>Welcome to the Dragon's Library</h1>
+      <p>Explore our collection of magical tomes.</p>
+
+      <ul>
+            { allBooks.map((book: any) => 
+            <li>
+                <a href={book.url}>{book.frontmatter.title}</a> 
+                {book.frontmatter.author ? `- ${book.frontmatter.author}` : ''}
+            </li> ) }
+      </ul>
+    </div>
+</BaseLayout>
+
+<style>
+.library-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.125rem; /* Increased from 1rem (16px) to ~18px */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+li {
+  margin: 0.75rem 0;
+}
+
+a {
+  color: var(--lavender);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
