@@ -11,8 +11,8 @@ const { frontmatter } = Astro.props;
       </header>
 
       <section class="book-meta">
-        {frontmatter.rating && <p><strong>Rating:</strong> {frontmatter.rating} / 5</p>}
-        {frontmatter.source && <p><strong>Source:</strong> <a href={frontmatter.source} target="_blank">{frontmatter.source}</a></p>}
+        {frontmatter.rating && <p><strong>Rating:</strong> {frontmatter.rating} / 10</p>}
+        {frontmatter.source && <p><strong>Source:</strong> <a href={frontmatter.source.url} target="_blank">{frontmatter.source.name}</a></p>}
         {frontmatter['word/page count'] && <p><strong>Length:</strong> {frontmatter['word/page count']}</p>}
         {frontmatter.tags && frontmatter.tags.length > 0 && (
           <p><strong>Tags:</strong> {frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}</p>

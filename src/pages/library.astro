@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const postedBooks = await getCollection("books", ({ data }) => {
-    return data.post === true ? import.meta.env.PROD : true;
+    return import.meta.env.PROD ? data.post : true;
 });
 ---
 

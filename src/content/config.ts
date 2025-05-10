@@ -6,7 +6,10 @@ const Books = defineCollection({
     author: z.string().optional(),
     post: z.boolean().default(true),
     rating: z.number().optional(),
-    source: z.string().optional(),
+    source: z.object({
+        name: z.string(),
+        url: z.string(),
+    }),
     tags: z.array(z.string()).optional(),
     wordCount: z.number().optional()
   })

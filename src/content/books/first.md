@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/BookLayout.astro
 title: "The Wizard's Grimoire"
 author: "Merlin the Magician"
 post: false
