@@ -1,7 +1,9 @@
 ---
+layout: ../../layouts/BookLayout.astro
 title: "The Wizard's Grimoire"
 author: "Merlin the Magician"
-slug: "wizards-grimoire"
+post: false
+rating: 10
 ---
 # Chapter One: The Arcane Arts
 

@@ -1,0 +1,82 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+<BaseLayout>
+    <article class="book-entry">
+      <header class="book-header">
+        <h1 class="book-title">{frontmatter.title}</h1>
+        {frontmatter.author && <h2 class="book-author">by {frontmatter.author}</h2>}
+      </header>
+
+      <section class="book-meta">
+        {frontmatter.rating && <p><strong>Rating:</strong> {frontmatter.rating} / 5</p>}
+        {frontmatter.source && <p><strong>Source:</strong> <a href={frontmatter.source} target="_blank">{frontmatter.source}</a></p>}
+        {frontmatter['word/page count'] && <p><strong>Length:</strong> {frontmatter['word/page count']}</p>}
+        {frontmatter.tags && frontmatter.tags.length > 0 && (
+          <p><strong>Tags:</strong> {frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}</p>
+        )}
+      </section>
+
+      <section class="book-content">
+        <slot />
+      </section>
+
+      <style>
+        .book-entry {
+          max-width: 1000px;
+          margin: 4rem auto;
+          padding: 2rem;
+          background-color: var(--base);
+          border: 2px solid var(--surface2);
+          border-radius: 12px;
+          font-family: var(--font-serif);
+          color: var(--text);
+        }
+
+        .book-header {
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+
+        .book-title {
+          font-size: 2.4rem;
+          color: var(--lavender);
+        }
+
+        .book-author {
+          font-size: 1.4rem;
+          color: var(--subtext0);
+        }
+
+        .book-meta {
+          margin-bottom: 2rem;
+          font-size: 1.1rem;
+          color: var(--subtext1);
+        }
+
+        .book-meta a {
+          color: var(--blue);
+          text-decoration: underline;
+        }
+
+        .tag {
+          display: inline-block;
+          background-color: var(--surface1);
+          color: var(--mauve);
+          padding: 0.2rem 0.6rem;
+          margin: 0 0.3rem;
+          border-radius: 6px;
+          font-size: 0.9rem;
+        }
+
+        .book-content {
+          font-size: 1.15rem;
+          line-height: 1.75;
+          color: var(--text);
+        }
+      </style>
+    </article>
+
+</BaseLayout>

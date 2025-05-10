@@ -1,6 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const allBooks = Object.values(import.meta.glob('./books/*.md', { eager: true }));
+
+const postedBooks = await getCollection("books", ({ data }) => {
+    return data.post === true ? import.meta.env.PROD : true;
+});
 ---
 
 <BaseLayout title="Library">
@@ -9,10 +13,10 @@ const allBooks = Object.values(import.meta.glob('./books/*.md', { eager: true })
       <p>Explore our collection of magical tomes.</p>
 
       <ul>
-            { allBooks.map((book: any) => 
+            { postedBooks.map((book: any) => 
             <li>
-                <a href={book.url}>{book.frontmatter.title}</a> 
-                {book.frontmatter.author ? `- ${book.frontmatter.author}` : ''}
+                <a href={`/books/${book.slug}`}>{book.data.title}</a> 
+                {book.data.author ? `- ${book.data.author}` : ''}
             </li> ) }
       </ul>
     </div>
