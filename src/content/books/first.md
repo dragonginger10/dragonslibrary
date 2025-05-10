@@ -2,7 +2,7 @@
 title: "The Wizard's Grimoire"
 author: "Merlin the Magician"
 post: false
-rating: 10
+rating: 8
 ---
 # Chapter One: The Arcane Arts
 

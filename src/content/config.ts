@@ -9,7 +9,7 @@ const Books = defineCollection({
     source: z.object({
         name: z.string(),
         url: z.string(),
-    }),
+    }).optional(),
     tags: z.array(z.string()).optional(),
     wordCount: z.number().optional()
   })
