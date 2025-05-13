@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" nav={true}>
+  <section class="about-container">
+    <h1>About Dragon’s Library</h1>
+    <p>
+        Within these shelves lie reflections, not spells — reviews and thoughts on books and stories I've uncovered on my travels. Some are old as dragons, others as fresh as morning ink. All are here to be explored, weighed, and remembered.
+    </p>
+
+    <p>
+      Dragon’s Library is a personal archive — a space for recording tales that moved me, challenged me, or simply lingered like a half-remembered dream. If you’ve found your way here, you’re welcome to wander its halls. This site is a personal project built with Astro, styled with the Catppuccin Macchiato palette, and infused with a love for fantasy and storytelling. Whether you're a fellow bibliophile or a curious mage, we’re glad you’re here.
+    </p>
+  </section>
+
+  <style>
+    .about-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: var(--surface1);
+      border: 1px solid var(--surface2);
+      border-radius: 12px;
+      font-size: 1.4rem; /* bumped up from 1.125rem (~18px → ~20px) */
+      font-family: var(--font-serif);
+      color: var(--text);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-container h1 {
+      color: var(--lavender);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center; /* center the heading */
+    }
+
+    .about-container p {
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+      color: var(--subtext1);
+    }
+  </style>
+
+
+</BaseLayout>
+

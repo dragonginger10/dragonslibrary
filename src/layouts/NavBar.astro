@@ -1,0 +1,55 @@
+<nav class="main-nav">
+  <div class="nav-grid">
+    <div></div> <!-- Left spacer -->
+    <h1 class="site-title">📚 Dragon’s Library</h1>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/library">Library</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+
+  <style>
+    .main-nav {
+      background-color: var(--mantle);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto 0;
+    }
+
+    .site-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--lavender);
+      font-family: var(--font-serif);
+      margin: 0;
+    }
+
+    .nav-links {
+      justify-self: end;
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: var(--lavender);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--rosewater);
+    }
+  </style>
+</nav>
+

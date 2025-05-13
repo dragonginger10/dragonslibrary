@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css"
-const { title = "Dragon's Library" } = Astro.props;
+import NavBar from "../layouts/NavBar.astro"
+const { title = "Dragon's Library", nav = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -16,7 +17,7 @@ const { title = "Dragon's Library" } = Astro.props;
   <body>
     <div class="page">
       <header>
-        <h1>📚 Dragon’s Library</h1>
+        {nav && <NavBar />}
       </header>
 
       <main>

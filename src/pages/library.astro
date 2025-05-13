@@ -7,7 +7,7 @@ const postedBooks = await getCollection("books", ({ data }) => {
 });
 ---
 
-<BaseLayout title="Library">
+<BaseLayout title="Library" nav={true}>
     <div class="library-container">
       <h1>Welcome to the Dragon's Library</h1>
       <p>Explore our collection of magical tomes.</p>
