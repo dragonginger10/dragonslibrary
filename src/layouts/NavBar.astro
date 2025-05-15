@@ -1,13 +1,20 @@
 <nav class="main-nav">
+
   <div class="nav-grid">
     <div></div> <!-- Left spacer -->
     <h1 class="site-title">📚 Dragon’s Library</h1>
-    <ul class="nav-links">
+
+    <button class="hamburger" data-toggle-nav aria-label="Toggle Navigation">
+        ☰
+    </button>
+    <ul id="nav-links" class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/library">Library</a></li>
       <li><a href="/about">About</a></li>
     </ul>
   </div>
+
+<script src="../scripts/navbar.js"></script>
 
   <style>
     .main-nav {
@@ -22,6 +29,7 @@
       align-items: center;
       max-width: 1200px;
       margin: auto 0;
+      position: relative;
     }
 
     .site-title {
@@ -30,6 +38,19 @@
       color: var(--lavender);
       font-family: var(--font-serif);
       margin: 0;
+    }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: var(--lavender);
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .nav-links {
@@ -49,6 +70,29 @@
 
     .nav-links a:hover {
       color: var(--rosewater);
+    }
+
+     @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 1rem;
+        top: 100%;
+        background-color: var(--mantle);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
     }
   </style>
 </nav>
