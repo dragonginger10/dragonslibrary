@@ -6,16 +6,18 @@ const Books = defineCollection({
     author: z.string().optional(),
     post: z.boolean().default(true),
     rating: z.number().optional(),
-    source: z.object({
+    source: z
+      .object({
         name: z.string(),
         url: z.string(),
-    }).optional(),
+      })
+      .optional(),
     tags: z.array(z.string()).optional(),
-    wordCount: z.number().optional()
-  })
+    wordCount: z.number().optional(),
+    date: z.date(),
+  }),
 });
 
 export const collections = {
   books: Books,
 };
-
